@@ -1,0 +1,48 @@
+SANS FIGHT SIMULATOR - Jogo extraído (Construct 2)
+=====================================================
+
+O jogo NÃO abre clicando duas vezes no index.html (protocolo file://
+bloqueia recursos por segurança do navegador). Você precisa rodar um
+servidor local. Veja como abaixo.
+
+COMO RODAR (escolha uma opção):
+
+1) Python (mais fácil, já vem instalado na maioria dos PCs/Mac):
+   - Abra um terminal DENTRO desta pasta (a pasta "game", que contém
+     esta pasta "380740" e o arquivo "sdk.js")
+   - Rode:
+       python3 -m http.server 8000
+     (no Windows pode ser "python -m http.server 8000")
+   - Abra no navegador:
+       http://localhost:8000/380740/j4g0n3aum8hu8c4oi8p973wfo5xml4se_brotli/index.html
+
+2) VS Code:
+   - Instale a extensão "Live Server"
+   - Clique com botão direito no arquivo index.html (dentro da pasta 380740/...)
+     -> "Open with Live Server"
+
+3) Node.js:
+   - Rode: npx serve .
+   - Abra o link mostrado no terminal, navegando até a pasta do index.html
+
+O QUE FOI FEITO:
+- Removi a dependência do SDK da Yandex Games (que precisa de um
+  servidor online da Yandex pra funcionar) do arquivo index.html.
+  O arquivo original ficou salvo como "index_original.html" na mesma
+  pasta, caso queira comparar.
+- Faltou apenas 1 arquivo de 113: "appmanifest.json" (só contém nome/ícone
+  do app para instalação como PWA, não afeta a jogabilidade).
+
+ESTRUTURA DE PASTAS:
+game/
+├── sdk.js                          (não usado, mantido por segurança)
+├── sdk/_/v2....js                  (não usado, mantido por segurança)
+└── 380740/j4g0n3...brotli/
+    ├── index.html                  <- ABRA ESTE (via servidor local!)
+    ├── index_original.html         (versão original com SDK Yandex)
+    ├── c2runtime.js                (motor Construct 2)
+    ├── data.js                     (dados do jogo)
+    ├── jquery-3.4.1.min.js
+    ├── images/                     (sprites)
+    ├── media/                      (sons e música)
+    └── sans_*.csv                  (dados dos ataques/padrões)
